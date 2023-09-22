@@ -1,0 +1,17 @@
+.workflow-column-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px;
+
+    border-radius: 3px;
+
+    .workflow-column-list-item {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 8px;
+
+        background-color: rgb(246, 246, 246);
+        border-radius: 3px;
+    }
+}

@@ -1,0 +1,17 @@
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 12px;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 14px 2px rgba(0, 0, 0, 0.16);
+
+    .card-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

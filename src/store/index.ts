@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { workflowsReducer } from "./slices/workflows";
+import { workflowsReducer } from "./workflows/slices";
+import { tasksReducer } from "./tasks/slices";
 
 export const store = configureStore({
     reducer: {
+        tasks: tasksReducer,
         workflows: workflowsReducer,
     }
 });

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import WorkflowHeaderItem from "../WorkflowHeaderItem";
-import { selectWorkflows } from "../../store/selectors/workflows";
+import { selectWorkflows } from "../../store/workflows/selectors";
 import './styles.css';
 
 function WorkflowHeader() {

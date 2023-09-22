@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchWorkflows } from "../thunks/workflowsThunks";
 import { WorkflowsState } from "../../types/workflow";
+import { fetchWorkflows } from "./thunks";
 
 const initialState: WorkflowsState = {
     data: [],

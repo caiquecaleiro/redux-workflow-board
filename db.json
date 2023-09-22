@@ -23,7 +23,7 @@
         },
         {
             "title": "Task 2",
-            "workflowId": 1,
+            "workflowId": 2,
             "estimationPoints": 5,
             "taskTypeId": 2,
             "id": 2
