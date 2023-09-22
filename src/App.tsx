@@ -3,7 +3,7 @@ import Board from './screens/Board'
 
 function App() {
     return (
-        <div>
+        <div className="container || constrain-width">
             <Board />
         </div>
     )

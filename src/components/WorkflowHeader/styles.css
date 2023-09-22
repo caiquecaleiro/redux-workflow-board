@@ -1,0 +1,7 @@
+.workflow-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px;
+
+    border-radius: 3px;
+}
