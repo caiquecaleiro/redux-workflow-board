@@ -1,1 +1,49 @@
-{}
+{
+    "workflows": [
+        {
+            "name": "To Do",
+            "id": 1
+        },
+        {
+            "name": "In Progress",
+            "id": 2
+        },
+        {
+            "name": "Completed",
+            "id": 3
+        }
+    ],
+    "tasks": [
+        {
+            "title": "Task 1",
+            "workflowId": 1,
+            "estimationPoints": 1,
+            "taskTypeId": 1,
+            "id": 1
+        },
+        {
+            "title": "Task 2",
+            "workflowId": 1,
+            "estimationPoints": 5,
+            "taskTypeId": 2,
+            "id": 2
+        },
+        {
+            "title": "Task 3",
+            "workflowId": 3,
+            "estimationPoints": 5,
+            "taskTypeId": 2,
+            "id": 3
+        }
+    ],
+    "taskTypes": [
+        {
+            "name": "User Story",
+            "id": 1
+        },
+        {
+            "name": "Bug",
+            "id": 2
+        }
+    ]
+}
