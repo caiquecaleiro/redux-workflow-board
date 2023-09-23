@@ -19,6 +19,7 @@ function Board() {
         dispatch(fetchTasks());
     }, [dispatch])
 
+    // TODO: Implement loading and error states for each child component
     if (isLoading) {
         return (
             <div>Loading...</div>
@@ -30,10 +31,10 @@ function Board() {
     }
 
     return (
-        <>
+        <div data-testid="board">
             <WorkflowHeader />
             <WorkflowColumnList />
-        </>
+        </div>
     )
 }
 

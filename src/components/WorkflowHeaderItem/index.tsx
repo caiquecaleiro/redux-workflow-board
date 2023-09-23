@@ -1,7 +1,6 @@
 import './styles.css';
 
 interface WorkflowHeaderItemProps {
-    id: number;
     name: string;
 }
 

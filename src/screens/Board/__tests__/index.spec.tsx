@@ -1,14 +1,38 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import Board from '../index';
+import { createServer, renderWithProviders } from '../../../utils/test-utils';
 
 describe('<Board />', () => {
-    it('should render a header text with "Board here"', () => {
-        render(<Board />);
+    createServer([
+        {
+            path: 'http://localhost:3005/workflows',
+            res: () => {
+                return [{
+                    id: 1,
+                    name: 'Test workflow',
+                }]
+            }
+        },
+        {
+            path: 'http://localhost:3005/tasks',
+            res: () => {
+                return [{
+                    id: 1,
+                    title: 'Test card',
+                    description: 'Test description',
+                    estimationPoints: 3,
+                    workflowId: 1,
+                    taskTypeId: 1,
+                }]
+            }
+        }
+    ]);
 
-        const heading = screen.getByRole('heading', {
-            name: /board here/i
-        });
+    it('should render the workflow header and columns list', async () => {
+        renderWithProviders(<Board />);
 
-        expect(heading).toBeInTheDocument();
+        const board = await screen.findByTestId('board');
+
+        expect(board).toBeInTheDocument();
     })
 });
