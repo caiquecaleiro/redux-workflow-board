@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
+import { Droppable } from 'react-beautiful-dnd';
+import DraggableCard from '../DraggableCard';
 import { AppState } from '../../store';
 import { selectTasksFilteredByWorkflowId } from '../../store/tasks/selectors';
-import Card from '../Card';
 import './styles.css';
 
 interface CardsListItemProps {
@@ -14,16 +15,25 @@ function WorkflowColumn(props: CardsListItemProps) {
     );
 
     return (
-        <ul
-            className="workflow-column"
+        <Droppable
+            droppableId={`workflow-${props.workflowId}`}
         >
-            {tasks.map((task) => (
-                <li key={task.id} className="workflow-column-item">
-                    <Card {...task} />
-                </li>
-            ))}
-        </ul>
-    )
+            {(provided) => (
+                <ul
+                    className="workflow-column"
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                >
+                    {tasks.map((task, index) => (
+                        <li key={task.id} className="workflow-column-item">
+                            <DraggableCard card={task} index={index} />
+                        </li>
+                    ))}
+                    {provided.placeholder}
+                </ul>
+            )}
+        </Droppable>
+    );
 }
 
 export default WorkflowColumn;
